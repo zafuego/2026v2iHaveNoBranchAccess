@@ -101,6 +101,11 @@ public double getAbsoluteHeadingRadians() {
       .setSetpoint(motorRpm, ControlType.kVelocity);
   }
 
+  public void setPower(double speed) 
+  {
+      motor.set(speed);
+  }
+
   @Override
   public void periodic() {
     Rotation2d angle = TurretMath.getDesiredTurretAngle(Swerve.getInstance().getPose(), new Translation2d(0.0,0.0));
